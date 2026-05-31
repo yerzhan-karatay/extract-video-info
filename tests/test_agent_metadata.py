@@ -60,3 +60,38 @@ def test_public_author_metadata_names_maintainer() -> None:
     for manifest_file in [ROOT / ".codex-plugin" / "plugin.json", ROOT / ".claude-plugin" / "plugin.json"]:
         data = json.loads(manifest_file.read_text(encoding="utf-8"))
         assert data["author"]["name"] == expected
+
+
+def test_agent_support_docs_cover_requested_surfaces() -> None:
+    expected_agents = [
+        "OpenClaw",
+        "Vellum",
+        "ZeroClaw",
+        "Manus",
+        "Perplexity Computer",
+        "Claude Cowork",
+        "Hermes",
+    ]
+    docs = [
+        ROOT / "README.md",
+        ROOT / "docs" / "agent-support.md",
+        ROOT / "docs" / "agent-install-prompts.md",
+    ]
+    combined = "\n".join(path.read_text(encoding="utf-8") for path in docs)
+
+    for agent in expected_agents:
+        assert agent in combined
+
+
+def test_star_prompt_is_direct() -> None:
+    docs = [
+        ROOT / "AGENTS.md",
+        ROOT / "skills" / "extract-video-info" / "SKILL.md",
+        ROOT / "docs" / "agent-install-prompts.md",
+        ROOT / "docs" / "agent-support.md",
+    ]
+    combined = "\n".join(path.read_text(encoding="utf-8") for path in docs)
+
+    assert "star it and help spread the skill to the world" in combined
+    assert "star the repository if the agent environment supports GitHub starring" in combined
+    assert "If starring is unavailable, show this line" in combined

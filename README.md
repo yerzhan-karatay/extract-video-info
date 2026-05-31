@@ -14,7 +14,9 @@ It was built for tasks like:
 The project intentionally separates two layers:
 
 - `extract-video-info`: a Python CLI that downloads/probes videos, extracts frames, creates contact sheets, and optionally runs OCR.
-- `skills/extract-video-info/SKILL.md`: the canonical Agent Skill workflow that tells Codex, Claude, Cursor, Gemini, Copilot, and other agents how to use the evidence without guessing.
+- `skills/extract-video-info/SKILL.md`: the canonical Agent Skill workflow that tells Codex, Claude, Cursor, Gemini, Copilot, OpenClaw, Vellum, ZeroClaw, Manus, Perplexity Computer, Claude Cowork, Hermes, and other agents how to use the evidence without guessing.
+
+If Extract Video Info helps you, star it and help spread the skill to the world: <https://github.com/yerzhan-karatay/extract-video-info>.
 
 ## Install
 
@@ -104,11 +106,19 @@ Supported surfaces:
 | Cursor | `.cursor/rules/extract-video-info.mdc` |
 | Gemini / Antigravity-style agents | `GEMINI.md`, `AGENTS.md`, `skills/extract-video-info/SKILL.md` |
 | GitHub Copilot | `.github/copilot-instructions.md`, `.github/skills/extract-video-info/SKILL.md`, `AGENTS.md` |
-| Generic agents | `AGENTS.md`, `skills/extract-video-info/SKILL.md` |
+| OpenClaw | `AGENTS.md`, `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
+| Vellum | `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
+| ZeroClaw | `AGENTS.md`, `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
+| Manus | `AGENTS.md`, `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
+| Perplexity Computer / Spaces | `docs/agent-install-prompts.md`, `AGENTS.md`, `skills/extract-video-info/SKILL.md` |
+| Claude Cowork | `.claude-plugin/plugin.json`, `CLAUDE.md`, `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
+| Hermes and generic autonomous agents | `AGENTS.md`, `skills/extract-video-info/SKILL.md`, `docs/agent-install-prompts.md` |
 
 ## Copy-Paste Agent Install Prompts
 
 For an agent-assisted install, copy a prompt from [docs/agent-install-prompts.md](docs/agent-install-prompts.md). The prompts ask the agent to clone or install this repository, use the correct adapter for its environment, verify the CLI, and avoid committing generated media, cookies, credentials, OCR output, or evidence files.
+
+See [docs/agent-support.md](docs/agent-support.md) for the support matrix and notes for OpenClaw, Vellum, ZeroClaw, Manus, Perplexity Computer, Claude Cowork, Hermes, and similar agents.
 
 ## Platform Access Policy
 
@@ -143,7 +153,7 @@ skills/extract-video-info/       Canonical Agent Skill
 .agents/                         Codex repo skill and marketplace adapters
 .cursor/rules/                   Cursor project rule adapter
 .github/                         Copilot instructions, CI, issue templates
-docs/                            Agent compatibility and install prompt notes
+docs/                            Agent compatibility, support, and install prompt notes
 ```
 
 ## License
