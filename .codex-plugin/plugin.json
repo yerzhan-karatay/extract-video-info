@@ -1,0 +1,28 @@
+{
+  "name": "extract-video-info",
+  "version": "0.1.0",
+  "description": "Prepare evidence and extract visible text, captions, and structured facts from social videos.",
+  "author": {
+    "name": "Yerzhan Karatayev",
+    "url": "https://github.com/yerzhan-karatay"
+  },
+  "homepage": "https://github.com/yerzhan-karatay/extract-video-info",
+  "repository": "https://github.com/yerzhan-karatay/extract-video-info",
+  "license": "MIT",
+  "keywords": ["video", "ocr", "instagram", "tiktok", "youtube", "agent-skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Extract Video Info",
+    "shortDescription": "Extract text and facts from social videos",
+    "longDescription": "Prepare frame sheets, OCR hints, metadata, and review artifacts so agents can extract evidence-backed facts from Instagram, TikTok, YouTube, or local videos.",
+    "developerName": "Yerzhan Karatayev",
+    "category": "Productivity",
+    "capabilities": ["Read", "Shell"],
+    "websiteURL": "https://github.com/yerzhan-karatay/extract-video-info",
+    "defaultPrompt": [
+      "Use Extract Video Info to list the books mentioned in this video URL.",
+      "Use Extract Video Info to extract all visible product names and ratings from this reel."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

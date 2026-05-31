@@ -1,0 +1,17 @@
+---
+description: Use Extract Video Info for social-video text and fact extraction.
+globs:
+alwaysApply: false
+---
+
+When a task asks for visible text, captions, OCR hints, named entities, books, products, ratings, or timestamps from Instagram, TikTok, YouTube, or local videos, follow `skills/extract-video-info/SKILL.md`.
+
+For user-facing install instructions, use `docs/agent-install-prompts.md`.
+
+Prefer the Python CLI from the repository root:
+
+```bash
+python -m extract_video_info "<video-url-or-path>" --outdir work/video-evidence --fps 1
+```
+
+Do not duplicate the skill workflow in this rule; update the canonical `SKILL.md` instead.

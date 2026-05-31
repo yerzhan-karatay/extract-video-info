@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "extract-video-info",
+  "displayName": "Extract Video Info",
+  "version": "0.1.0",
+  "description": "Prepare evidence and extract visible text, captions, and structured facts from social videos.",
+  "author": {
+    "name": "Yerzhan Karatayev",
+    "url": "https://github.com/yerzhan-karatay"
+  },
+  "homepage": "https://github.com/yerzhan-karatay/extract-video-info",
+  "repository": "https://github.com/yerzhan-karatay/extract-video-info",
+  "license": "MIT",
+  "keywords": ["video", "ocr", "instagram", "tiktok", "youtube", "agent-skills"]
+}

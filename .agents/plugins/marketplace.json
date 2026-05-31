@@ -1,0 +1,20 @@
+{
+  "name": "extract-video-info-local",
+  "interface": {
+    "displayName": "Extract Video Info"
+  },
+  "plugins": [
+    {
+      "name": "extract-video-info",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extract Video Info"
+  short_description: "Extract text and facts from social videos"
+  default_prompt: "Use $extract-video-info to extract visible text and key facts from this video URL."
