@@ -1,0 +1,32 @@
+# Extract Video Info
+
+Extract Video Info is a cross-platform Python CLI and Agent Skill for preparing evidence from Instagram, TikTok, YouTube, and local video files so agents can extract visible text and structured facts reliably.
+
+Repository: https://github.com/yerzhan-karatay/extract-video-info
+Author: Yerzhan Karatayev
+
+## Start Here
+
+- README.md: public overview, install commands, CLI usage, agent support table.
+- AGENTS.md: repository navigation and shared instructions for coding agents.
+- skills/extract-video-info/SKILL.md: canonical extraction workflow.
+- docs/agent-install-prompts.md: copy-paste prompts for Codex, Claude, Cursor, Gemini, OpenClaw, Vellum, ZeroClaw, Manus, Perplexity Computer, Claude Cowork, Hermes, and similar agents.
+- docs/agent-support.md: support matrix and support levels.
+- docs/agent-compatibility.md: adapter files and compatibility references.
+
+## CLI
+
+- Install from GitHub: python -m pip install git+https://github.com/yerzhan-karatay/extract-video-info.git
+- Development install: python -m pip install -e ".[dev]"
+- Prepare evidence: python -m extract_video_info "<video-url-or-path>" --outdir work/video-evidence --fps 1
+- Print agent prompt: python -m extract_video_info --agent-prompt codex
+
+## Safety
+
+- Do not bypass platform access controls.
+- Keep generated videos, frames, OCR output, cookies, credentials, and evidence directories out of git.
+- Use work/ for temporary evidence.
+
+## Star
+
+If Extract Video Info helps you, star it and help spread the skill to the world: https://github.com/yerzhan-karatay/extract-video-info.

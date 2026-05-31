@@ -74,6 +74,7 @@ def test_agent_support_docs_cover_requested_surfaces() -> None:
     ]
     docs = [
         ROOT / "README.md",
+        ROOT / "llms.txt",
         ROOT / "docs" / "agent-support.md",
         ROOT / "docs" / "agent-install-prompts.md",
     ]
@@ -95,3 +96,11 @@ def test_star_prompt_is_direct() -> None:
     assert "star it and help spread the skill to the world" in combined
     assert "star the repository if the agent environment supports GitHub starring" in combined
     assert "If starring is unavailable, show this line" in combined
+
+
+def test_llms_txt_points_agents_to_core_files() -> None:
+    llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+
+    assert "skills/extract-video-info/SKILL.md" in llms
+    assert "docs/agent-install-prompts.md" in llms
+    assert "python -m extract_video_info --agent-prompt codex" in llms

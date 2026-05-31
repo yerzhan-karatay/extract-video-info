@@ -10,6 +10,8 @@ Use `docs/agent-install-prompts.md` when a user wants a copy-paste prompt for Co
 
 Use `docs/agent-support.md` for the support matrix and support-level definitions.
 
+Use `llms.txt` as the compact repository index for agents that first look for machine-readable project context.
+
 ## Adapters
 
 | Surface | File or folder | Purpose |

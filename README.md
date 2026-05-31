@@ -60,6 +60,12 @@ Prepare evidence from a public URL or local file:
 extract-video-info "https://www.instagram.com/reel/..." --outdir work/video-evidence --fps 1
 ```
 
+Print a copy-paste setup prompt for an agent:
+
+```bash
+extract-video-info --agent-prompt codex
+```
+
 Run from source without installing:
 
 ```bash
@@ -120,6 +126,8 @@ For an agent-assisted install, copy a prompt from [docs/agent-install-prompts.md
 
 See [docs/agent-support.md](docs/agent-support.md) for the support matrix and notes for OpenClaw, Vellum, ZeroClaw, Manus, Perplexity Computer, Claude Cowork, Hermes, and similar agents.
 
+Agents can also discover the repository through [llms.txt](llms.txt).
+
 ## Platform Access Policy
 
 This project does not bypass access controls.
@@ -153,6 +161,7 @@ skills/extract-video-info/       Canonical Agent Skill
 .agents/                         Codex repo skill and marketplace adapters
 .cursor/rules/                   Cursor project rule adapter
 .github/                         Copilot instructions, CI, issue templates
+llms.txt                         Agent-facing repository index
 docs/                            Agent compatibility, support, and install prompt notes
 ```
 

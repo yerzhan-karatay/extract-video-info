@@ -5,6 +5,7 @@ import json
 import sys
 from pathlib import Path
 
+from .agent_prompts import AGENT_NAMES, render_agent_prompt
 from .downloader import download_video, dump_metadata, is_url
 from .ocr import run_ocr
 from .report import write_summary
@@ -18,7 +19,14 @@ def build_parser() -> argparse.ArgumentParser:
         prog="extract-video-info",
         description="Prepare reviewable evidence from a social video URL or local video file.",
     )
-    parser.add_argument("source", help="Instagram/TikTok/YouTube URL or local video path")
+    parser.add_argument("source", nargs="?", help="Instagram/TikTok/YouTube URL or local video path")
+    parser.add_argument(
+        "--agent-prompt",
+        nargs="?",
+        const="universal",
+        choices=AGENT_NAMES,
+        help="Print a copy-paste install prompt for an agent and exit",
+    )
     parser.add_argument("--outdir", default="work/video-evidence", help="Output directory for evidence")
     parser.add_argument("--fps", type=float, default=1.0, help="Frame sampling rate")
     parser.add_argument("--frame-width", type=int, default=360, help="Scaled review frame width")
@@ -39,6 +47,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def validate_args(args: argparse.Namespace) -> None:
+    if not args.source:
+        raise ValueError("source is required unless --agent-prompt is used")
     if args.fps <= 0:
         raise ValueError("--fps must be greater than 0")
     if args.frame_width <= 0:
@@ -114,6 +124,10 @@ def prepare_evidence(args: argparse.Namespace) -> Path:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.agent_prompt:
+        print(render_agent_prompt(args.agent_prompt))
+        return 0
+
     try:
         summary = prepare_evidence(args)
     except (CommandError, FileNotFoundError, RuntimeError, ValueError) as exc:
